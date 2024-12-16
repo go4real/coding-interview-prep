@@ -120,6 +120,22 @@ heapq.heappop(h)
 
 ---
 
+
+
+# collections
+
+## Defaul Dict 
+- No need to check for key existence
+- example
+```
+from collections import defaultdict
+counts = defaultdict(int)
+words = ['aa', 'bb', 'ccc', 'bb', 'bb']
+for word in words:
+  counts[word] += 1
+print(max(counts, key=counts.get))
+```
+
 ## Counter
 most_common()
 total()
@@ -127,14 +143,23 @@ elements()
 ```
 from collections import Counter
 Counter(["hi", "hey", "hi", "hi", "hello", "hey"])
-Counter({'hi': 3, 'hey': 2, 'hello': 1})
+-> Counter({'hi': 3, 'hey': 2, 'hello': 1})
 
 Counter("hello world")
-Counter({'h': 1, 'e': 1, 'l': 3, 'o': 2, ' ': 1, 'w': 1, 'r': 1, 'd': 1})
+-> Counter({'h': 1, 'e': 1, 'l': 3, 'o': 2, ' ': 1, 'w': 1, 'r': 1, 'd': 1})
 
 Counter('hello world').most_common()
+Counter('hello world').most_common(1)[0][0]
 
 ```
+
+```
+from collections import Counter
+words = ['aa', 'bb', 'ccc', 'bb', 'bb']
+counts = Counter(words)
+
+```
+
 
 ----------------
   
